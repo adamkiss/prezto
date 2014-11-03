@@ -1,0 +1,79 @@
+#
+# Custom (relevant) theme
+#
+# Authors:
+#   Adam Kiss <adamkiss.com>
+#
+# Screenshots:
+#   lolnope
+#
+
+# Load dependencies.
+pmodload 'helper'
+
+# checks if multiple variables are empty
+function space_if_empty {
+  for arg in $argv; do
+    print " "
+    return 0
+  done
+  return 1
+}
+
+function prompt_ak_precmd {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+
+  # Get Git repository information.
+  if (( $+functions[git-info] )); then
+    git-info
+  fi
+}
+
+function prompt_ak_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+
+  # Add hook for calling git-info before each command.
+  add-zsh-hook precmd prompt_ak_precmd
+
+  # Set editor-info parameters. AK: Don't use?
+  # zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
+  # zstyle ':prezto:module:editor:info:keymap:primary' format ' %B%F{red}❯%F{yellow}❯%F{green}❯%f%b'
+  # zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format ' %F{red}♺%f'
+  # zstyle ':prezto:module:editor:info:keymap:alternate' format ' %B%F{green}❮%F{yellow}❮%F{red}❮%f%b'
+
+  # Set git-info parameters.
+  zstyle ':prezto:module:git:info' verbose 'yes'
+  zstyle ':prezto:module:git:info:action' format ':%%B%F{yellow}%s%f%%b'
+  zstyle ':prezto:module:git:info:added' format '%%B%F{green}+%f%%b'
+  zstyle ':prezto:module:git:info:ahead' format ' %%B%F{yellow}↑%f%%b'
+  zstyle ':prezto:module:git:info:behind' format ' %%B%F{yellow}↓%f%%b'
+  zstyle ':prezto:module:git:info:branch' format '%F{green}%b%f'
+  zstyle ':prezto:module:git:info:commit' format ':%F{green}%.7c%f'
+  zstyle ':prezto:module:git:info:deleted' format '%%B%F{red}–%f%%b'
+  zstyle ':prezto:module:git:info:modified' format ' %%B%F{magenta}※%f%%b'
+  zstyle ':prezto:module:git:info:position' format ':%F{red}%p%f'
+  zstyle ':prezto:module:git:info:renamed' format ' %%B%F{magenta}⊙%f%%b'
+  zstyle ':prezto:module:git:info:stashed' format '%F{cyan}[%f%F{yellow}S%f%F{cyan}]%f'
+  zstyle ':prezto:module:git:info:unmerged' format ' %%B%F{yellow}═%f%%b'
+  zstyle ':prezto:module:git:info:untracked' format '%%B%F{cyan}✳%f%%b'
+  zstyle ':prezto:module:git:info:keys' format \
+    'prompt' '%F{cyan}[g:%f$(coalesce "%b" "%p" "%c")%A%B$(space_if_empty "%u" "%s" "%a" "%d" "%m" "%r" "%U")%u%s%a%d%m%r%U%F{cyan}]%f%S' \
+    'rprompt' '%A%B%S%a%d%m%r%U%u'
+
+  # Define prompts.
+  PROMPT='%F{grey}${_prompt_sorin_pwd}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
+  PROMPT='
+%F{yellow}%n %F{grey}▵ %F{blue}%~ ${(e)git_info[prompt]}
+%F{cyan}%T%f %F{grey}$ %F{white}'
+  RPROMPT='${editor_info[overwrite]}%(?:: %F{red}%B!%b%f)'
+
+  SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+}
+
+prompt_ak_setup "$@"
