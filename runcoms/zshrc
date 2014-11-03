@@ -11,3 +11,51 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# colorful ls
+export CLICOLOR=1
+
+#
+# aliases - shortcuts
+#
+
+# bash
+alias cls="clear"
+alias clr="clear"
+alias ls="ls -AF"
+alias lsd="ls -lh"
+alias s="du -hs"
+alias mv="mv -i"
+alias rm="rm -i"
+alias sshr="ssh -R 52698:127.0.0.1:52698"
+# alias refresh="source ~/.bash_profile"
+
+# git
+# alias gst="git status"
+# alias gc="git commit"
+# alias gcm="git commit -m"
+# alias gco="git checkout"
+# alias ga="git add"
+# alias gaa="ga ."
+# alias gpsh="git push"
+# alias gpll="git pull"
+# alias gd="git diff"
+# alias gdt="git difftool"
+
+# postgresql
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias pgtail="tail -f /usr/local/var/postgres/server.log"
+
+# middleman
+alias mms="bundle exec middleman server"
+alias mmb="bundle exec middleman build --clean"
+
+# misc
+alias ch="chrome-cli open" # chrome open new tab
+alias gshelp="ch https://github.com/adamkiss/prezto/tree/master/modules/git#aliases"
+alias pwdcopy="printf '${PWD}' | pbcopy"
+alias wdcopy="printf '${PWD##*/}' | pbcopy"
+
+# replace sublime text icon
+export EDITOR='slime'
