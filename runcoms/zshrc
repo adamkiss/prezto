@@ -60,3 +60,6 @@ alias wdcopy="printf '${PWD##*/}' | pbcopy"
 
 # replace sublime text icon
 export EDITOR='slime'
+
+# Doh Npm completion
+eval "`npm completion`"
