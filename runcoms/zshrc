@@ -53,7 +53,8 @@ alias mmb="bundle exec middleman build --clean"
 
 # misc
 alias ch="chrome-cli open" # chrome open new tab
-alias gshelp="ch https://github.com/adamkiss/prezto/tree/master/modules/git#aliases"
+alias gsch="ch https://github.com/adamkiss/prezto/tree/master/modules/git#aliases"
+alias gsh="cat ~/.zprezto/modules/git/alias.zsh"
 alias pwdcopy="printf '${PWD}' | pbcopy"
 alias wdcopy="printf '${PWD##*/}' | pbcopy"
 
