@@ -15,6 +15,7 @@ fi
 # colorful ls
 export CLICOLOR=1
 
+
 # NODE_PATH
 export NODE_PATH=/usr/local/lib/node_modules
 
@@ -51,7 +52,7 @@ alias gsh="cat ~/.zprezto/modules/git/alias.zsh"
 alias pwdcopy="printf '${PWD}' | pbcopy"
 alias wdcopy="printf '${PWD##*/}' | pbcopy"
 
-# replace sublime text icon
+# set editor
 export EDITOR='slime2'
 
 # Doh Npm completion
