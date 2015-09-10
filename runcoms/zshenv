@@ -12,7 +12,12 @@ fi
 
 # add my custom bin //TODO: Clean this folder :D
 export PATH=/Users/adam/Dropbox/Backup/Bash/bin:$PATH
+
 # add homebrew & homebrew python path (wat?) //TODO: test without then remove
-# export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH
-# add mamp php & mysql to my $PATH
-export PATH=/Applications/MAMP/bin/php/php5.5.10/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+# add mamp php to my $PATH
+export PATH=/Applications/MAMP/bin/php/php5.6.10/bin:$PATH
+
+# composer global
+export PATH=/Users/adam/.composer/vendor/bin:$PATH

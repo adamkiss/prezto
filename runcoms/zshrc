@@ -15,6 +15,9 @@ fi
 # colorful ls
 export CLICOLOR=1
 
+# NODE_PATH
+export NODE_PATH=/usr/local/lib/node_modules
+
 #
 # aliases - shortcuts
 #
@@ -27,20 +30,10 @@ alias lsd="ls -lh"
 alias s="du -hs"
 alias mv="mv -i"
 alias rm="rm -i"
-alias sshr="ssh -R 52698:127.0.0.1:52698"
-# alias refresh="source ~/.bash_profile"
 
-# git
-# alias gst="git status"
-# alias gc="git commit"
-# alias gcm="git commit -m"
-# alias gco="git checkout"
-# alias ga="git add"
-# alias gaa="ga ."
-# alias gpsh="git push"
-# alias gpll="git pull"
-# alias gd="git diff"
-# alias gdt="git difftool"
+#mysql
+alias mysql="/Applications/MAMP/Library/bin/mysql"
+alias mysqldump="/Applications/MAMP/Library/bin/mysqldump"
 
 # postgresql
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
@@ -59,7 +52,7 @@ alias pwdcopy="printf '${PWD}' | pbcopy"
 alias wdcopy="printf '${PWD##*/}' | pbcopy"
 
 # replace sublime text icon
-export EDITOR='slime'
+export EDITOR='slime2'
 
 # Doh Npm completion
 eval "`npm completion`"

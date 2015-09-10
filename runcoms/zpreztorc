@@ -35,7 +35,8 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'completion' \
   'syntax-highlighting' \
-  'prompt'
+  'prompt' \
+  'ruby'
 
 #
 # Editor
