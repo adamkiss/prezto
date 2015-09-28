@@ -31,6 +31,8 @@ alias lsd="ls -lh"
 alias s="du -hs"
 alias mv="mv -i"
 alias rm="rm -i"
+alias s2="slime2 -a"
+alias s2.="s2 ."
 
 #mysql
 alias mysql="/Applications/MAMP/Library/bin/mysql"
@@ -44,6 +46,15 @@ alias pgtail="tail -f /usr/local/var/postgres/server.log"
 # middleman
 alias mms="bundle exec middleman server"
 alias mmb="bundle exec middleman build --clean"
+
+# vagrant
+alias vshare="vagrant share"
+alias vssh="vagrant ssh"
+alias vup="vagrant up"
+alias vhalt="vagrant halt"
+alias vreload="vagrant reload"
+alias vcon="vagrant connect"
+alias vconssh="vagrant connect --ssh"
 
 # misc
 alias ch="chrome-cli open" # chrome open new tab
