@@ -62,8 +62,12 @@ alias gsh="cat ~/.zprezto/modules/git/alias.zsh"
 alias pwdcopy="printf '${PWD}' | pbcopy"
 alias wdcopy="printf '${PWD##*/}' | pbcopy"
 
+# mamp tail
+alias lt-php="tail -f /Applications/MAMP/logs/php_error.log"
+alias lt-apache="tail -f /Applications/MAMP/logs/apache_error.log"
+
 # set editor
-export EDITOR='slime2'
+export EDITOR='slime'
 
 # Doh Npm completion
 eval "`npm completion`"
