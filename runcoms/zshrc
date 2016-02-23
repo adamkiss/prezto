@@ -32,6 +32,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias s2="slime2 -a"
 alias s2.="s2 ."
+f(){ find . -name *$1* }
 
 #mysql
 alias mysql="/Applications/MAMP/Library/bin/mysql"
