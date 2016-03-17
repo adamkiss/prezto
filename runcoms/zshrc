@@ -67,6 +67,9 @@ alias wdcopy="printf '${PWD##*/}' | pbcopy"
 alias lt-php="tail -f /Applications/MAMP/logs/php_error.log"
 alias lt-apache="tail -f /Applications/MAMP/logs/apache_error.log"
 
+# Frankensmith
+alias frank="rsync --info=progress2 -rL --exclude='.git' --exclude='.gitmodules' --exclude='.gitignore' --exclude='.DS_Store' --include='/.gitignore' ~/Projects/Frankensmith-site/"
+
 # set editor
 export EDITOR='slime'
 
