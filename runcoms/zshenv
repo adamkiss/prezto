@@ -21,3 +21,6 @@ export PATH=/Applications/MAMP/bin/php/php5.6.10/bin:$PATH
 
 # composer global
 export PATH=/Users/adam/.composer/vendor/bin:$PATH
+
+# SDXC card shortcut
+export SD=/Volumes/SDXC
