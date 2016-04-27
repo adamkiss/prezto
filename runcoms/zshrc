@@ -12,11 +12,30 @@ fi
 
 # Customize to your needs...
 
-# colorful ls
+## colorful ls
 export CLICOLOR=1
 
-# NODE_PATH
+## NODE_PATH
 export NODE_PATH=/usr/local/lib/node_modules
+
+## PATH
+# add my custom bin //TODO: Clean this folder :D
+export PATH=/Users/adam/Dropbox/Backup/Bash/bin:$PATH
+
+# add homebrew & homebrew python path (wat?) //TODO: test without then remove
+# export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+# add mamp php to my $PATH
+export PATH=/Applications/MAMP/bin/php/php7.0.0/bin:$PATH
+
+# composer global
+export PATH=/Users/adam/.composer/vendor/bin:$PATH
+
+## SDXC card shortcut
+export SD=/Volumes/SDXC
+
+## Caskroom PATH to link
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 #
 # aliases - shortcuts
@@ -30,8 +49,6 @@ alias lsd="ls -lh"
 alias s="du -hs"
 alias mv="mv -i"
 alias rm="rm -i"
-alias s2="slime2 -a"
-alias s2.="s2 ."
 f(){ find . -name *$1* }
 
 #mysql
