@@ -31,6 +31,9 @@ export PATH=/Applications/MAMP/bin/php/php7.0.0/bin:$PATH
 # composer global
 export PATH=/Users/adam/.composer/vendor/bin:$PATH
 
+# yarn
+export PATH=$PATH:$HOME/.yarn/bin
+
 ## SDXC card shortcut
 export SD=/Volumes/SDXC
 
