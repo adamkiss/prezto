@@ -26,7 +26,7 @@ export PATH=/Users/adam/Dropbox/Backup/Bash/bin:$PATH
 # export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # add mamp php to my $PATH
-export PATH=/Applications/MAMP/bin/php/php7.0.0/bin:$PATH
+# export PATH=/Applications/MAMP/bin/php/php7.0.0/bin:$PATH
 
 # composer global
 export PATH=/Users/adam/.composer/vendor/bin:$PATH
