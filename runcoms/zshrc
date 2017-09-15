@@ -49,7 +49,7 @@ alias kmwinesteam="WINEPREFIX=/Volumes/data/Applications/Winetricks/ wine C:\\\\
 
 alias gwinetricks="WINEPREFIX=/Volumes/SDXC/Applications/Winetricks/ winetricks"
 alias gwine="WINEPREFIX=/Volumes/SDXC/Applications/Winetricks/ wine"
-alias gwinesteam="WINEPREFIX=/Volumes/SDXC/Applications/Winetricks/ wine C:\\\\windows\\\\command\\\\start.exe /Unix /Volumes/data/Applications/Winetricks/dosdevices/c:/users/Public/Desktop/Steam.lnk"
+alias gwinesteam="WINEPREFIX=/Volumes/SDXC/Applications/Winetricks/ wine C:\\\\windows\\\\command\\\\start.exe /Unix /Volumes/SDXC/Applications/Winetricks/dosdevices/c:/users/Public/Desktop/Steam.lnk"
 
 #
 # aliases - shortcuts
