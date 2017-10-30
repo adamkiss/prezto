@@ -10,6 +10,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Source secrets
+source ~/.secrets
+
 # Customize to your needs...
 
 ## colorful ls
@@ -106,3 +109,35 @@ export EDITOR='slime'
 
 # Doh Npm completion
 eval "`npm completion`"
+
+# Bitbucket API stuff
+function new_bitbucket_repo(){
+	repo_args=( ${(s(/))1} )
+	case $repo_args[1] in
+		ak )
+			user="adamkiss"
+			;;
+		akt )
+			user="adamkissteam"
+			project="project:={\"key\": \"AK${${2-B}:u}\"}"
+			;;
+		bs )
+			user="bestshot"
+			project="project:={\"key\": \"BS${${2-B}:u}\"}"
+			;;
+		* )
+			user=$repo_args[1]
+			;;
+	esac
+	repo=$repo_args[2]
+
+	http -a adamkiss:${API_BITBUCKET} POST https://api.bitbucket.org/2.0/repositories/$user/$repo scm=git is_private:=true $project | jq -r '.links.clone[1].href'
+}
+
+function origin2bb(){
+	git remote add origin `new_bitbucket_repo $1 $2` && git push -u origin master
+}
+
+function s2bb(){
+	git remote remove origin && origin2bb $1 $2 && git push -u origin master
+}
