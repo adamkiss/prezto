@@ -102,10 +102,13 @@ alias lt-php="tail -f /Applications/MAMP/logs/php_error.log"
 alias lt-apache="tail -f /Applications/MAMP/logs/apache_error.log"
 
 # Frankensmith
-alias frank="rsync --info=progress2 -rL --exclude='.git' --exclude='.gitmodules' --exclude='.gitignore' --exclude='.DS_Store' --include='/.gitignore' ~/Projects/Frankensmith-site/"
+# alias frank="rsync --info=progress2 -rL --exclude='.git' --exclude='.gitmodules' --exclude='.gitignore' --exclude='.DS_Store' --include='/.gitignore' ~/Projects/Frankensmith-site/"
 
 # set editor
 export EDITOR='slime'
+
+# yarn run shortcut
+alias yr="yarn run"
 
 # Doh Npm completion
 eval "`npm completion`"
@@ -135,9 +138,17 @@ function new_bitbucket_repo(){
 }
 
 function origin2bb(){
-	git remote add origin `new_bitbucket_repo $1 $2` && git push -u origin master
+	git remote add origin `new_bitbucket_repo $1 $2`
+}
+
+function origin2bb_push(){
+  origin2bb $1 $2 && git push -u origin master
 }
 
 function s2bb(){
 	git remote remove origin && origin2bb $1 $2 && git push -u origin master
 }
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# added by travis gem
+[ -f /Users/adam/.travis/travis.sh ] && source /Users/adam/.travis/travis.sh
