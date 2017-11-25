@@ -110,6 +110,9 @@ export EDITOR='slime'
 # yarn run shortcut
 alias yr="yarn run"
 
+# Remove linkCreation.dotm, Adobe+Msft clusterfuck
+alias rm_link="rm /Users/adam/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Startup.localized/Word/linkCreation.dotm"
+
 # Doh Npm completion
 eval "`npm completion`"
 
