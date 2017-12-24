@@ -44,16 +44,6 @@ export SD=/Volumes/SDXC
 ## Caskroom PATH to link
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-## Winetricks
-# export WINEPREFIX=/Volumes/data/Applications/Winetricks/
-alias kmwinetricks="WINEPREFIX=/Volumes/data/Applications/Winetricks/ winetricks"
-alias kmwine="WINEPREFIX=/Volumes/data/Applications/Winetricks/ wine"
-alias kmwinesteam="WINEPREFIX=/Volumes/data/Applications/Winetricks/ wine C:\\\\windows\\\\command\\\\start.exe /Unix /Volumes/data/Applications/Winetricks/dosdevices/c:/users/Public/Desktop/Steam.lnk"
-
-alias gwinetricks="WINEPREFIX=/Volumes/SDXC/Applications/Winetricks/ winetricks"
-alias gwine="WINEPREFIX=/Volumes/SDXC/Applications/Winetricks/ wine"
-alias gwinesteam="WINEPREFIX=/Volumes/SDXC/Applications/Winetricks/ wine C:\\\\windows\\\\command\\\\start.exe /Unix /Volumes/SDXC/Applications/Winetricks/dosdevices/c:/users/Public/Desktop/Steam.lnk"
-
 #
 # aliases - shortcuts
 #
