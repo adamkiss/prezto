@@ -92,7 +92,7 @@ alias lt-php="tail -f /Applications/MAMP/logs/php_error.log"
 alias lt-apache="tail -f /Applications/MAMP/logs/apache_error.log"
 
 # Frankensmith
-# alias frank="rsync --info=progress2 -rL --exclude='.git' --exclude='.gitmodules' --exclude='.gitignore' --exclude='.DS_Store' --include='/.gitignore' ~/Projects/Frankensmith-site/"
+alias newfrank1site="rsync --info=progress2 -rL --exclude='.git' --exclude='.gitmodules' --exclude='.gitignore' --exclude='.DS_Store' --include='/.gitignore' ~/Projects/Frankensmith-site/"
 
 # set editor
 export EDITOR='slime'
@@ -108,30 +108,30 @@ eval "`npm completion`"
 
 # Bitbucket API stuff
 function new_bitbucket_repo(){
-	repo_args=( ${(s(/))1} )
-	case $repo_args[1] in
-		ak )
-			user="adamkiss"
-			;;
-		akt )
-			user="adamkissteam"
-			project="project:={\"key\": \"AK${${2-B}:u}\"}"
-			;;
-		bs )
-			user="bestshot"
-			project="project:={\"key\": \"BS${${2-B}:u}\"}"
-			;;
-		* )
-			user=$repo_args[1]
-			;;
-	esac
-	repo=$repo_args[2]
+  repo_args=( ${(s(/))1} )
+  case $repo_args[1] in
+    ak )
+      user="adamkiss"
+      ;;
+    akt )
+      user="adamkissteam"
+      project="project:={\"key\": \"AK${${2-B}:u}\"}"
+      ;;
+    bs )
+      user="bestshot"
+      project="project:={\"key\": \"BS${${2-B}:u}\"}"
+      ;;
+    * )
+      user=$repo_args[1]
+      ;;
+  esac
+  repo=$repo_args[2]
 
-	http -a adamkiss:${API_BITBUCKET} POST https://api.bitbucket.org/2.0/repositories/$user/$repo scm=git is_private:=true $project | jq -r '.links.clone[1].href'
+  http -a adamkiss:${API_BITBUCKET} POST https://api.bitbucket.org/2.0/repositories/$user/$repo scm=git is_private:=true $project | jq -r '.links.clone[1].href'
 }
 
 function origin2bb(){
-	git remote add origin `new_bitbucket_repo $1 $2`
+  git remote add origin `new_bitbucket_repo $1 $2`
 }
 
 function origin2bb_push(){
@@ -139,7 +139,7 @@ function origin2bb_push(){
 }
 
 function s2bb(){
-	git remote remove origin && origin2bb $1 $2 && git push -u origin master
+  git remote remove origin && origin2bb $1 $2 && git push -u origin master
 }
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
