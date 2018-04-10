@@ -84,7 +84,7 @@ alias vconssh="vagrant connect --ssh"
 alias ch="chrome-cli open" # chrome open new tab
 alias gsch="ch https://github.com/adamkiss/prezto/tree/master/modules/git#aliases"
 alias gsh="cat ~/.zprezto/modules/git/alias.zsh"
-alias pwdcopy="printf '${PWD}' | pbcopy"
+alias pwdcopy="pwd | pbcopy"
 alias wdcopy="printf '${PWD##*/}' | pbcopy"
 
 # mamp tail
